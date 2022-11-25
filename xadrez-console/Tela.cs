@@ -22,10 +22,5 @@ namespace xadrez_console
                 Console.WriteLine();
             }
         }
-
-        internal static void imprimirTabuleiro()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
