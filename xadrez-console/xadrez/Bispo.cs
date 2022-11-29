@@ -2,11 +2,12 @@
 
 namespace xadrez
 {
-    internal class Bispo : Peca
+
+    class Bispo : Peca
     {
+
         public Bispo(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
-
         }
 
         public override string ToString()
@@ -22,12 +23,11 @@ namespace xadrez
 
         public override bool[,] movimentosPossiveis()
         {
-
             bool[,] mat = new bool[tab.linhas, tab.colunas];
 
             Posicao pos = new Posicao(0, 0);
 
-            //NO
+            // NO
             pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -38,7 +38,8 @@ namespace xadrez
                 }
                 pos.definirValores(pos.linha - 1, pos.coluna - 1);
             }
-            //NE
+
+            // NE
             pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -49,7 +50,8 @@ namespace xadrez
                 }
                 pos.definirValores(pos.linha - 1, pos.coluna + 1);
             }
-            //SE
+
+            // SE
             pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -60,7 +62,8 @@ namespace xadrez
                 }
                 pos.definirValores(pos.linha + 1, pos.coluna + 1);
             }
-            //SO
+
+            // SO
             pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -73,10 +76,6 @@ namespace xadrez
             }
 
             return mat;
-
         }
-
-
-
     }
 }
